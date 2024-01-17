@@ -30,10 +30,10 @@ app.use(cors());
 
 
 app.get('/', (req, res) => {res.send(database.users);})
-app.post('https://smartbrainapp-8q6s.onrender.com/signin',(req, res) => {signin.handleSignIn(req, res, bcrypt, db)}) 
-app.post('https://smartbrainapp-8q6s.onrender.com/register',(req,res) => {register.handleRegister(req, res, bcrypt, db)})
-app.get('https://smartbrainapp-8q6s.onrender.com/profile/:id', (req, res) => {profile.handleProfileGet(req, res, db)})
-app.put('https://smartbrainapp-8q6s.onrender.com/image', (req, res) => {image.handleImage(req, res, db)})
+app.post('/signin',(req, res) => {signin.handleSignIn(req, res, bcrypt, db)}) 
+app.post('/register',(req,res) => {register.handleRegister(req, res, bcrypt, db)})
+app.get('/profile/:id', (req, res) => {profile.handleProfileGet(req, res, db)})
+app.put('/image', (req, res) => {image.handleImage(req, res, db)})
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
